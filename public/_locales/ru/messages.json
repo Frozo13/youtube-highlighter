@@ -1,4 +1,8 @@
 {
+  "name": {
+    "message": "Youtube highlighter - выделение видео в подписках",
+    "description": "Youtube highlighter"
+  },
   "description": {
     "message": "Выделение видео от выбранных каналов в подписках",
     "description": "Highlight video from selected channels in subscriptions"

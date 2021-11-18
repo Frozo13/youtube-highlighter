@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Youtube highlighter",
+  "name": "__MSG_name__",
   "version": "1.0",
   "description": "__MSG_description__",
   "author": "frozo13@gmail.com",

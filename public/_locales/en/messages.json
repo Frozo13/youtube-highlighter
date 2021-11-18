@@ -1,4 +1,8 @@
 {
+  "name": {
+    "message": "Youtube highlighter",
+    "description": "Youtube highlighter"
+  },
   "description": {
     "message": "Highlight video from selected channels in subscriptions",
     "description": "Highlight video from selected channels in subscriptions"
