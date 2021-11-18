@@ -5,7 +5,7 @@
   "author": "frozo13@gmail.com",
   "content_scripts": [
     {
-      "matches": ["https://www.youtube.com/feed/subscriptions"],
+      "matches": ["https://www.youtube.com/*"],
       "js": ["content.js"]
     }
   ],

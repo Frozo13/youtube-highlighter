@@ -1,9 +1,17 @@
 let channels = []
+let contentObserver
 
 chrome.storage.local.get(['channels'], result => {
   if (result.channels) {
     channels = result.channels
-    highlight(document)
+
+    if (
+      document.location.href.indexOf(
+        'https://www.youtube.com/feed/subscriptions',
+      ) === 0
+    ) {
+      observeContent()
+    }
   }
 })
 
@@ -25,19 +33,52 @@ function highlight(node) {
   }
 }
 
-var target = document.getElementById('contents')
+function observeContent() {
+  highlight(document)
 
-var observer = new MutationObserver(function (mutations) {
-  mutations.forEach(mutation => {
-    if (mutation.type === 'childList') {
-      for (const node of mutation.addedNodes) {
-        if (node.tagName === 'YTD-ITEM-SECTION-RENDERER') {
-          highlight(node)
+  const target = document.getElementById('contents')
+
+  contentObserver = new MutationObserver(function (mutations) {
+    mutations.forEach(mutation => {
+      if (mutation.type === 'childList') {
+        for (const node of mutation.addedNodes) {
+          if (node.tagName === 'YTD-ITEM-SECTION-RENDERER') {
+            highlight(node)
+          }
         }
+      }
+    })
+  })
+
+  contentObserver.observe(target, {
+    attributes: true,
+    childList: true,
+    characterData: true,
+  })
+}
+
+let oldHref = document.location.href
+
+var pageObserver = new MutationObserver(function (mutations) {
+  mutations.forEach(() => {
+    if (oldHref != document.location.href) {
+      oldHref = document.location.href
+      if (
+        document.location.href.indexOf(
+          'https://www.youtube.com/feed/subscriptions',
+        ) === 0
+      ) {
+        setTimeout(() => {
+          observeContent()
+        }, 500)
+      } else {
+        contentObserver?.disconnect()
       }
     }
   })
 })
 
-var config = { attributes: true, childList: true, characterData: true }
-observer.observe(target, config)
+pageObserver.observe(document.body, {
+  childList: true,
+  subtree: true,
+})
