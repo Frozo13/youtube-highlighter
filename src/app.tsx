@@ -8,6 +8,7 @@ import { IChannel } from './interfaces/IChannel'
 
 const App: FunctionalComponent = () => {
   const [search, setSearch] = useState('')
+  const [hasChanges, setHasChanges] = useState(false)
   const [errorTimeout, setErrorTimeoutId] = useState<NodeJS.Timeout | null>(
     null,
   )
@@ -43,6 +44,14 @@ const App: FunctionalComponent = () => {
     chrome.storage.local.set({ channels: channels })
   }
 
+  function reloadTabs() {
+    chrome.tabs
+      .query({ url: 'https://www.youtube.com/*' })
+      .then(tabs => tabs.forEach(tab => chrome.tabs.reload(tab.id!)))
+
+    setHasChanges(false)
+  }
+
   function addChannel(channel: IChannel) {
     const link = channel.link
 
@@ -62,7 +71,7 @@ const App: FunctionalComponent = () => {
     }
 
     setChannels([channel, ...channels])
-    console.log('save', channels)
+    setHasChanges(true)
 
     return true
   }
@@ -72,6 +81,7 @@ const App: FunctionalComponent = () => {
       visible: true,
       callback: () => {
         setChannels(channels.filter(c => c.link !== link))
+        setHasChanges(true)
       },
     })
   }
@@ -108,6 +118,7 @@ const App: FunctionalComponent = () => {
         }
         setChannels(channels)
         save()
+        setHasChanges(true)
       },
     })
   }
@@ -148,6 +159,11 @@ const App: FunctionalComponent = () => {
         <div onClick={() => hideError()} class="error">
           {error}
         </div>
+      )}
+      {hasChanges && (
+        <button onClick={() => reloadTabs()} class="reload-btn ">
+          Обновить вкладки youtube для применения настроек
+        </button>
       )}
       <div>
         {inputActive ? (

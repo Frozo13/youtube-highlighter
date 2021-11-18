@@ -188,3 +188,11 @@ input:focus {
   background-color: $red-color;
   cursor: pointer;
 }
+
+.reload-btn {
+  background-color: rgb(19, 173, 19);
+
+  &:hover {
+    background-color: rgb(16, 126, 16);
+  }
+}
