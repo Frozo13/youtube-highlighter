@@ -2,6 +2,7 @@
   "manifest_version": 3,
   "name": "Youtube highlighter",
   "version": "1.0",
+  "description": "__MSG_description__",
   "author": "frozo13@gmail.com",
   "default_locale": "en",
   "content_scripts": [

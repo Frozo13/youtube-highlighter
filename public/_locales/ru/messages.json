@@ -1,4 +1,8 @@
 {
+  "description": {
+    "message": "Выделение видео от выбранных каналов в подписках",
+    "description": "Highlight video from selected channels in subscriptions"
+  },
   "add_btn": {
     "message": "Добавить канал",
     "description": "Add channel"

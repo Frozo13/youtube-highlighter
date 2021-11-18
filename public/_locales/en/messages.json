@@ -1,4 +1,8 @@
 {
+  "description": {
+    "message": "Highlight video from selected channels in subscriptions",
+    "description": "Highlight video from selected channels in subscriptions"
+  },
   "add_btn": {
     "message": "Add channel",
     "description": "Add channel"
