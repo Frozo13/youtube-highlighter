@@ -1,0 +1,19 @@
+{
+  "name": "youtube-highlighter",
+  "version": "1.0.0",
+  "author": "Arkadiy Kovtun <frozo13@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "preact": "^10.4.1"
+  },
+  "devDependencies": {
+    "@prefresh/vite": "^1.2.1",
+    "@types/chrome": "^0.0.163",
+    "sass": "^1.43.4",
+    "vite": "^1.0.0-rc.13"
+  }
+}

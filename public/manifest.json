@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Youtube highlighter",
+  "version": "1.0",
+  "author": "frozo13@gmail.com",
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/feed/subscriptions"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "index.html"
+  },
+  "permissions": ["storage"]
+}

@@ -1,0 +1,16 @@
+// @ts-check
+import preactRefresh from '@prefresh/vite'
+
+/**
+ * @type { import('vite').UserConfig }
+ */
+const config = {
+  jsx: {
+    factory: 'h',
+    fragment: 'Fragment',
+  },
+  assetsDir: 'assets',
+  plugins: [preactRefresh()],
+}
+
+export default config
