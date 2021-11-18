@@ -1,5 +1,5 @@
 import { h, Fragment, FunctionalComponent } from 'preact'
-
+import { getString } from '../helpers/i18n'
 interface IColorModal {
   visible: boolean
   cancel: () => void
@@ -39,7 +39,7 @@ const ColorModal: FunctionalComponent<IColorModal> = ({
                 />
               ))}
             </div>
-            <button onClick={() => cancel()}>Отмена</button>
+            <button onClick={() => cancel()}>{getString('cancel')}</button>
           </div>
         </div>
       )}

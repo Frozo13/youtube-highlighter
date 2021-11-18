@@ -4,6 +4,7 @@ import Channel from './components/Channel'
 import ColorModal from './components/ColorModal'
 import DeleteModal from './components/DeleteModal'
 import InputForm from './components/InputForm'
+import { getString } from './helpers/i18n'
 import { IChannel } from './interfaces/IChannel'
 
 const App: FunctionalComponent = () => {
@@ -59,14 +60,14 @@ const App: FunctionalComponent = () => {
       link.indexOf('youtube.com/c/') === -1 &&
       link.indexOf('youtube.com/channel/') === -1
     ) {
-      showError('некорректная ссылка')
+      showError(getString('incorrect_link_error'))
       return false
     }
 
     channel.link = link.slice(link.indexOf('/c'))
 
     if (channels.find(c => c.link === channel.link)) {
-      showError('этот канал уже есть в списке')
+      showError(getString('dupliacate_channel_error'))
       return false
     }
 
@@ -140,7 +141,7 @@ const App: FunctionalComponent = () => {
       <input
         value={search}
         onInput={e => setSearch(e.currentTarget.value)}
-        placeholder="Поиск по добавленным"
+        placeholder={getString('search_placeholder')}
         type="text"
         class="search"
         autoFocus
@@ -162,7 +163,7 @@ const App: FunctionalComponent = () => {
       )}
       {hasChanges && (
         <button onClick={() => reloadTabs()} class="reload-btn ">
-          Обновить вкладки youtube для применения настроек
+          {getString('refresh_btn')}
         </button>
       )}
       <div>
@@ -174,7 +175,7 @@ const App: FunctionalComponent = () => {
           />
         ) : (
           <button onClick={() => setInputActive(true)} class="add-btn">
-            Добавить канал
+            {getString('add_btn')}
           </button>
         )}
       </div>

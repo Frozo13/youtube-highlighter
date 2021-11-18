@@ -1,0 +1,34 @@
+{
+  "add_btn": {
+    "message": "Добавить канал",
+    "description": "Add channel"
+  },
+  "refresh_btn": {
+    "message": "Обновить вкладки youtube для применения настроек",
+    "description": "Refresh youtube tabs to apply settings"
+  },
+  "search_placeholder": {
+    "message": "Поиск по добавленным",
+    "description": "Search"
+  },
+  "delete_confirm": {
+    "message": "Подтвердите удаление",
+    "description": "Confirm deletion"
+  },
+  "cancel": {
+    "message": "Отмена",
+    "description": "Cancel"
+  },
+  "channel_link_placeholder": {
+    "message": "ссылка на канал",
+    "description": "link to channel"
+  },
+  "incorrect_link_error": {
+    "message": "некорректная ссылка",
+    "description": "incorrect link"
+  },
+  "dupliacate_channel_error": {
+    "message": "этот канал уже есть в списке",
+    "description": "this channel has already been added"
+  }
+}

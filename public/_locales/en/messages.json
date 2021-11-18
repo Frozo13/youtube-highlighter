@@ -1,0 +1,34 @@
+{
+  "add_btn": {
+    "message": "Add channel",
+    "description": "Add channel"
+  },
+  "refresh_btn": {
+    "message": "Refresh youtube tabs to apply settings",
+    "description": "Refresh youtube tabs to apply settings"
+  },
+  "search_placeholder": {
+    "message": "Search",
+    "description": "Search"
+  },
+  "delete_confirm": {
+    "message": "Confirm deletion",
+    "description": "Confirm deletion"
+  },
+  "cancel": {
+    "message": "Cancel",
+    "description": "Cancel"
+  },
+  "channel_link_placeholder": {
+    "message": "link to channel",
+    "description": "link to channel"
+  },
+  "incorrect_link_error": {
+    "message": "incorrect link",
+    "description": "incorrect link"
+  },
+  "dupliacate_channel_error": {
+    "message": "this channel has already been added",
+    "description": "this channel has already been added"
+  }
+}

@@ -59,7 +59,7 @@ function observeContent() {
 
 let oldHref = document.location.href
 
-var pageObserver = new MutationObserver(function (mutations) {
+const pageObserver = new MutationObserver(mutations => {
   mutations.forEach(() => {
     if (oldHref != document.location.href) {
       oldHref = document.location.href

@@ -1,4 +1,5 @@
 import { h, Fragment, FunctionalComponent } from 'preact'
+import { getString } from '../helpers/i18n'
 
 interface IDeleteModal {
   visible: boolean
@@ -17,11 +18,11 @@ const DeleteModal: FunctionalComponent<IDeleteModal> = ({
         <div class="modal">
           <div class="modal__content">
             <div class="modal__content_label">
-              <h3>Подтвердите удаление</h3>
+              <h3>{getString('delete_confirm')}</h3>
             </div>
             <div class="modal__content_buttons">
               <button onClick={() => cancel()} class="cancel-btn">
-                Отмена
+                {getString('cancel')}
               </button>
               <button
                 onClick={() => {

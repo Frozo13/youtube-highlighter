@@ -1,6 +1,7 @@
 import { h, FunctionalComponent } from 'preact'
 import { useEffect, useRef, useState } from 'preact/hooks'
 import { IChannel } from '../interfaces/IChannel'
+import { getString } from '../helpers/i18n'
 
 interface IInputForm {
   cancel: () => void
@@ -52,7 +53,7 @@ const InputForm: FunctionalComponent<IInputForm> = ({
         onInput={e => setLink(e.currentTarget.value)}
         ref={inputRef}
         type="text"
-        placeholder="ссылка на канал"
+        placeholder={getString('channel_link_placeholder')}
         class="link-input"
       />
       <button onClick={clear} type="button" class="cancel">
