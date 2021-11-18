@@ -1,11 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
-$transition: 0.3s all ease;
 $default-color: rgb(86, 114, 204);
 $default-color-hover: rgb(54, 83, 179);
 $red-color: rgb(219, 126, 126);
 $red-color-hover: rgb(206, 107, 107);
 $gray-color: #ccc;
+$dark-gray-color: rgb(78, 78, 78);
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -194,5 +194,30 @@ input:focus {
 
   &:hover {
     background-color: rgb(16, 126, 16);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #e7eaed;
+    background-color: #202124;
+  }
+
+  input {
+    color: #e7eaed;
+    background-color: #292a2d;
+  }
+
+  button {
+    color: #e7eaed;
+  }
+
+  .modal__content {
+    background-color: #292a2d;
+  }
+
+  input:not(:focus),
+  .channel {
+    border-color: $dark-gray-color !important;
   }
 }
