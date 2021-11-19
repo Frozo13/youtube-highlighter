@@ -5,6 +5,11 @@
   "description": "__MSG_description__",
   "author": "Arkadiy Kovtun <frozo13@gmail.com>",
   "default_locale": "en",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
   "content_scripts": [
     {
       "matches": ["https://www.youtube.com/*"],
